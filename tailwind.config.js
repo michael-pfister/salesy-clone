@@ -13,6 +13,12 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
       },
+      colors: {
+        violet: "#293fcc",
+        blue: "#1083e5",
+        skyblue: "#e3eafc",
+        skyviolet: "#d1d9f7",
+      },
     },
   },
   plugins: [],
