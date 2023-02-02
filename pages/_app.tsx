@@ -59,7 +59,6 @@ const links = [
 export default function App({ Component, pageProps }: AppProps) {
   const [menuOpen, setMenuOpen] = useState(true);
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <div className="flex">
       <Head>

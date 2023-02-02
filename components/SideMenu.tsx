@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Anchor from "./Anchor";
 
 export default function SideMenu(props: {
@@ -12,13 +13,15 @@ export default function SideMenu(props: {
         !props.menuOpen && "p-0"
       }`}
     >
-      <Image
-        src="/images/cropped-salesy_original_-removebg-preview-1-1.png"
-        alt="Salesy"
-        width={300}
-        height={72}
-        priority
-      />
+      <Link href="/">
+        <Image
+          src="/images/cropped-salesy_original_-removebg-preview-1-1.png"
+          alt="Salesy"
+          width={300}
+          height={72}
+          priority
+        />
+      </Link>
       <hr className="my-2 border-b-1 border-gray-300" />
       <nav className="flex flex-col">
         <h4 className="">NAVIGATION</h4>

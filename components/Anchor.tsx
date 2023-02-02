@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Button(props: {
   className?: string;
@@ -7,7 +8,7 @@ export default function Button(props: {
   children: React.ReactNode;
 }) {
   return (
-    <a
+    <Link
       className={`flex gap-4 p-4 rounded-xl ${
         props.className ? props.className : ""
       }`}
@@ -24,6 +25,6 @@ export default function Button(props: {
         />
       )}
       {props.children}
-    </a>
+    </Link>
   );
 }
