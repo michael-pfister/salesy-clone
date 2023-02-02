@@ -1,8 +1,11 @@
-import AppBar from "@/components/AppBar";
+import SideMenu from "@/components/SideMenu";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Anchor from "@/components/Anchor";
+import AppBar from "@/components/AppBar";
+import { useState } from "react";
+import {motion} from "framer-motion";
 
 const links = [
   {
@@ -53,6 +56,7 @@ const links = [
 ];
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [menuOpen, setMenuOpen] = useState(true);
   return (
     <div className="flex">
       <Head>
@@ -62,24 +66,29 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/cropped-Logo-original-blue-32x32.png" />
       </Head>
       <header>
-        <AppBar trialPeriod>
-          <ul className="flex flex-col">
-            {links.map(({ href, label, iconSrc }, index) => {
-              return (
-                <Anchor
-                  href={href}
-                  iconSrc={iconSrc}
-                  key={`navBarItem_${index}`}
-                  className="text-gray-500 transition-transform hover:scale-105"
-                >
-                  {label}
-                </Anchor>
-              );
-            })}{" "}
-          </ul>
-        </AppBar>
+        <motion.div animate={{width: menuOpen ? '100%' : '0px'}}>
+          <SideMenu trialPeriod menuOpen={menuOpen}>
+            <ul className="flex flex-col">
+              {links.map(({ href, label, iconSrc }, index) => {
+                return (
+                  <Anchor
+                    href={href}
+                    iconSrc={iconSrc}
+                    key={`navBarItem_${index}`}
+                    className="text-gray-500 transition-transform hover:scale-105"
+                  >
+                    {label}
+                  </Anchor>
+                );
+              })}{" "}
+            </ul>
+          </SideMenu>
+        </motion.div>
       </header>
-      <main>
+      <main className="w-full">
+        <header>
+          <AppBar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+        </header>
         <Component {...pageProps} />
       </main>
     </div>

@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         violet: "#293fcc",
         blue: "#1083e5",
+        oceanblue: "#02a8eb",
         skyblue: "#e3eafc",
         skyviolet: "#d1d9f7",
       },
