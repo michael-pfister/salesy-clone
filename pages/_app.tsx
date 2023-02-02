@@ -5,7 +5,8 @@ import Head from "next/head";
 import Anchor from "@/components/Anchor";
 import AppBar from "@/components/AppBar";
 import { useState } from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const links = [
   {
@@ -44,7 +45,7 @@ const links = [
     iconSrc: "/images/article-svgrepo-com.svg",
   },
   {
-    href: "Jobs",
+    href: "/jobs",
     label: "Jobs",
     iconSrc: "/images/suitcase-svgrepo-com.svg",
   },
@@ -57,6 +58,8 @@ const links = [
 
 export default function App({ Component, pageProps }: AppProps) {
   const [menuOpen, setMenuOpen] = useState(true);
+  const router = useRouter();
+  console.log(router.pathname);
   return (
     <div className="flex">
       <Head>
@@ -66,28 +69,29 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/cropped-Logo-original-blue-32x32.png" />
       </Head>
       <header>
-        <motion.div animate={{width: menuOpen ? '100%' : '0px'}}>
+        <motion.div animate={{ width: menuOpen ? "100%" : "0px" }}>
           <SideMenu trialPeriod menuOpen={menuOpen}>
             <ul className="flex flex-col">
               {links.map(({ href, label, iconSrc }, index) => {
                 return (
-                  <Anchor
-                    href={href}
-                    iconSrc={iconSrc}
-                    key={`navBarItem_${index}`}
-                    className="text-gray-500 transition-transform hover:scale-105"
-                  >
-                    {label}
-                  </Anchor>
+                  <li key={`navBarItem_${index}`}>
+                    <Anchor
+                      href={href}
+                      iconSrc={iconSrc}
+                      className={`text-gray-500 transition-transform hover:scale-105 ${router.pathname === href && "bg-violet text-white"}`}
+                    >
+                      {label}
+                    </Anchor>
+                  </li>
                 );
-              })}{" "}
+              })}
             </ul>
           </SideMenu>
         </motion.div>
       </header>
       <main className="w-full">
         <header>
-          <AppBar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+          <AppBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         </header>
         <Component {...pageProps} />
       </main>
