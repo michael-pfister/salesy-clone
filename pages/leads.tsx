@@ -1,3 +1,3 @@
-export default function Leads(){
-    return <>Leads</>
+export default function Leads() {
+  return <>Leads</>;
 }

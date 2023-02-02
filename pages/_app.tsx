@@ -78,7 +78,9 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Anchor
                       href={href}
                       iconSrc={iconSrc}
-                      className={`text-gray-500 transition-transform hover:scale-105 ${router.pathname === href && "bg-violet text-white"}`}
+                      className={`text-gray-500 transition-transform hover:scale-105 ${
+                        router.pathname === href && "bg-violet text-white"
+                      }`}
                     >
                       {label}
                     </Anchor>

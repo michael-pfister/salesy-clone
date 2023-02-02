@@ -1,3 +1,3 @@
-export default function Companies(){
-    return <>Companies</>
+export default function Companies() {
+  return <>Companies</>;
 }

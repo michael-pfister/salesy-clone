@@ -1,3 +1,3 @@
-export default function Logout(){
-    return <>Logout</>
+export default function Logout() {
+  return <>Logout</>;
 }

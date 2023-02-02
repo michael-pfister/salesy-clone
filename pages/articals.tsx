@@ -1,3 +1,3 @@
-export default function Articals(){
-    return <>Articals</>
+export default function Articals() {
+  return <>Articals</>;
 }

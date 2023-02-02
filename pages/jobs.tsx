@@ -1,3 +1,3 @@
-export default function Jobs(){
-    return <>Jobs</>
+export default function Jobs() {
+  return <>Jobs</>;
 }
