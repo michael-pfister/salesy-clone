@@ -22,7 +22,7 @@ const FilterPanels: FilterPanel[] = [
   {
     headingStart: "Finde Unternehmen, die im",
     headingEnd: "Bereich tätig sind",
-    filters: ["Public Institiutions"],
+    filters: ["öffentliche Einrichtungen"],
   },
   {
     headingStart: "Deine Ansprechperson ist der/die",
@@ -38,7 +38,7 @@ export default function Filter() {
         <h1 className="text-xl">Filter</h1>
         <div className="flex gap-2">
           <button className="p-2 rounded-xl text-white bg-blue">
-            Assign Leads
+            Leads zuweisen
           </button>
           <button className="p-2 rounded-xl border border-blue flex gap-2 items-center">
             <div className="bg-green-400 w-4 aspect-square rounded-full" />
@@ -66,7 +66,7 @@ export default function Filter() {
         ))}
       </section>
       <section className="flex justify-end">
-        <button className="rounded-xl bg-violet py-4 px-8 text-white">
+        <button className="rounded-xl bg-violet py-4 px-8 text-white font-bold">
           SPEICHERN
         </button>
       </section>

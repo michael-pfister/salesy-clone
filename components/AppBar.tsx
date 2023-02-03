@@ -46,7 +46,7 @@ export default function AppBar(props: {
           />
         </motion.div>
       </button>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-6 items-center">
         <Link href="/help">
           <Image
             src="/images/help-svgrepo-com.svg"

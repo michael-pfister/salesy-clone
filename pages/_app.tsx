@@ -16,7 +16,7 @@ const links = [
   },
   {
     href: "/customers",
-    label: "Kunden",
+    label: "Customers",
     iconSrc: "/images/customer-report-line-svgrepo-com.svg",
   },
   {
@@ -30,8 +30,8 @@ const links = [
     iconSrc: "/images/company-svgrepo-com.svg",
   },
   {
-    href: "/leadsapproval",
-    label: "Leads Approval",
+    href: "/leadapproval",
+    label: "Lead Approval",
     iconSrc: "/images/invoice-approval-line-svgrepo-com.svg",
   },
   {
@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Anchor
                       href={href}
                       iconSrc={iconSrc}
-                      className={`text-gray-500 transition-transform hover:scale-105 active:scale-100 ${
+                      className={`text-gray-600 transition-transform hover:scale-105 active:scale-100 ${
                         router.pathname === href && "bg-violet !text-white"
                       }`}
                     >
@@ -90,11 +90,15 @@ export default function App({ Component, pageProps }: AppProps) {
           </SideMenu>
         </motion.div>
       </header>
-      <main className="w-full">
+      <main className="w-full flex flex-col">
         <header>
           <AppBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         </header>
         <Component {...pageProps} />
+        <footer className="mt-auto border border-t-gray-200 text-gray-500 text-sm p-4 flex justify-between items-center">
+          <p>© 2022 Advanced Sales Technologies GmbH</p>
+          <p>All Rights Reserved</p>
+        </footer>
       </main>
     </div>
   );

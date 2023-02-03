@@ -24,7 +24,7 @@ export default function SideMenu(props: {
       </Link>
       <hr className="my-2 border-b-1 border-gray-300" />
       <nav className="flex flex-col">
-        <h4 className="">NAVIGATION</h4>
+        <h4 className="text-gray-600">NAVIGATION</h4>
         {props.children}
       </nav>
       {props.trialPeriod && (
@@ -32,7 +32,7 @@ export default function SideMenu(props: {
           <div className="absolute -top-16 flex justify-center w-[100px] h-[129px]">
             <Image src="/images/rocket.webp" alt="Rocket" fill sizes="100px" />
           </div>
-          <p className="text-gray-500 p-2 text-center font-bold mt-16">
+          <p className="text-gray-600 p-2 text-center font-bold mt-16">
             You are using Trial Period
           </p>
           <Anchor
