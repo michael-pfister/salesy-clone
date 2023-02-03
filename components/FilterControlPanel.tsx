@@ -43,7 +43,7 @@ export default function FilterControlPanel(props: {
       <h2 className="p-4 font-bold text-gray-600 border-b border-gray-300 bg-verylightblue rounded-t-xl">
         {props.headingStart}
       </h2>
-      <div className="p-4 flex flex-wrap gap-2">
+      <div className="p-4 flex items-center flex-wrap gap-2">
         {filters.map((filter, index) => (
           <RemovableFilter key={`filter_${index}_text`} text={filter} />
         ))}
