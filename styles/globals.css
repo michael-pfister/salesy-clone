@@ -12,4 +12,4 @@ h4 {
 
 button {
   @apply transition-transform active:scale-95;
-} 
+}

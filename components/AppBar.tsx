@@ -2,12 +2,29 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-function ProfileButton(){
-  return <button className="text-white flex items-center gap-2" aria-label="open profile information">
-    <Image className="aspect-square rounded-full object-cover" src="/images/pexels-chloe-1043471.jpg" alt="Profile" width={50} height={50} />
-    <span>David John</span>
-    <Image src="/images/down-arrow-backup-2-svgrepo-com.svg" alt="" aria-hidden width={15} height={15} />
-  </button>
+function ProfileButton(props: { name: string; imageSrc: string }) {
+  return (
+    <button
+      className="text-white flex items-center gap-2"
+      aria-label="open profile information"
+    >
+      <Image
+        className="aspect-square rounded-full object-cover"
+        src={props.imageSrc}
+        alt="Profile"
+        width={50}
+        height={50}
+      />
+      {props.name}
+      <Image
+        src="/images/down-arrow-backup-2-svgrepo-com.svg"
+        alt=""
+        aria-hidden
+        width={15}
+        height={15}
+      />
+    </button>
+  );
 }
 
 export default function AppBar(props: {
@@ -31,12 +48,25 @@ export default function AppBar(props: {
       </button>
       <div className="flex gap-4 items-center">
         <Link href="/help">
-          <Image src="/images/help-svgrepo-com.svg" alt="Help" width={30} height={30} />
+          <Image
+            src="/images/help-svgrepo-com.svg"
+            alt="Help"
+            width={30}
+            height={30}
+          />
         </Link>
         <Link href="/settings">
-          <Image src="/images/settings-ui-svgrepo-com.svg" alt="Help" width={30} height={30} />
+          <Image
+            src="/images/settings-ui-svgrepo-com.svg"
+            alt="Help"
+            width={30}
+            height={30}
+          />
         </Link>
-        <ProfileButton />
+        <ProfileButton
+          name="David John"
+          imageSrc="/images/pexels-chloe-1043471.jpg"
+        />
       </div>
     </nav>
   );

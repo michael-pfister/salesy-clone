@@ -40,8 +40,8 @@ const links = [
     iconSrc: "/images/list-bullet-svgrepo-com.svg",
   },
   {
-    href: "/articals",
-    label: "Articals",
+    href: "/articles",
+    label: "Articles",
     iconSrc: "/images/article-svgrepo-com.svg",
   },
   {
