@@ -9,3 +9,7 @@
 h4 {
   @apply text-sm text-gray-400;
 }
+
+button {
+  @apply transition-transform active:scale-95;
+} 
