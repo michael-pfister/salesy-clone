@@ -11,12 +11,11 @@ function RemovableFilter(props: { text: string }) {
           title={`remove ${props.text}`}
           className={`flex gap-2 items-center bg-blue text-white text-sm rounded-full overflow-hidden`}
           onClick={() => setClose(true)}
-          initial={{ width: 0, height: 0 }}
-          animate={{ width: "auto", height: "auto" }}
-          exit={{ width: 0, height: 0 }}
+          initial={{ width: 0, height: 0, padding: 0 }}
+          animate={{ width: "auto", height: "auto", padding: "0.5rem 1rem" }}
+          exit={{ width: 0, height: 0, padding: 0 }}
         >
-          {/* padding on child elements fixes framer motion bug */}
-          <p className="whitespace-nowrap py-2 pl-4">{props.text}</p>
+          <p className="whitespace-nowrap">{props.text}</p>
           <Image
             src="/images/close-x-svgrepo-com-white.svg"
             alt=""
@@ -24,7 +23,6 @@ function RemovableFilter(props: { text: string }) {
             height={16}
             aria-hidden
           />
-          <div className="pr-2" aria-hidden="true" />
         </motion.button>
       )}
     </AnimatePresence>
